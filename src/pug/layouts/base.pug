@@ -1,0 +1,71 @@
+include ../mixins/mixin-loader.pug
+
+block vars
+	-
+		var title = title || ''
+		var description = description || ''
+		var image = image || ''
+	-
+		var html = {
+			attrs: {
+				lang: 'ru'
+			},
+			classList: []
+		}
+	-
+		var body = {
+			attrs: {},
+			classList: []
+		}
+	-
+		var meta = {
+			charset: 'utf-8',
+			description: description,
+			keywords: [],
+			ogTitle: title,
+			viewport: 'width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1',
+			XUACompatible: 'IE=edge'
+		}
+	-
+		var link = {
+			icon: '',
+			icon16x16: '',
+			icon32x32: '',
+		}
+
+doctype html
+html(class=html.classList)&attributes(html.attrs)
+	head
+		block head-start
+		block meta
+			if meta.charset
+				meta(charset=meta.charset)
+			if meta.XUACompatible
+				meta(http-equiv="X-UA-Compatible" content=meta.XUACompatible)
+			if meta.viewport
+				meta(name="viewport" content=meta.viewport)
+			if meta.description
+				meta(name="description" content=meta.description)
+		title
+			= title
+		block links
+			if link.icon
+				link(rel="icon" href=link.icon)
+			if link.icon16x16
+				link(rel="icon" href=link.icon16x16 sizes="16x16")
+			link(rel="stylesheet" href="/css/app.css?v=" + Date.now())
+			script.
+				function canUseWebP(){var e=document.createElement("canvas");return!(!e.getContext||!e.getContext("2d"))&&0==e.toDataURL("image/webp").indexOf("data:image/webp")}var root=document.getElementsByTagName("html")[0];canUseWebP()?root.classList.add("ws"):root.classList.add("wn");
+		block head-end
+	body(class=body.classList)&attributes(body.attrs)
+		block header 
+			include header
+		block content
+		block footer 
+			include footer
+		block popup 
+			include modals
+		block scripts
+			script(src="http://code.jquery.com/jquery-3.3.1.min.js")
+			script(src="/js/app.js?v=" + Date.now())
+		block body-end

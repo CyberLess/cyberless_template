@@ -1,0 +1,29 @@
+{
+    "build": {
+        "html": "dist/",
+        "js": "dist/app/js/",
+        "css": "dist/app/css/",
+        "img": "dist/app/img/",
+        "attach": "dist/",
+        "svg": "dist/app/icons/",
+        "fonts": "dist/app/fonts/"
+    },
+    "src": {
+        "html": "src/pug/pages/**/*.pug",
+        "js": "src/js/app.js",
+        "css": "src/sass/**/*.scss",
+        "img": "src/img/*.{jpg,png}",
+        "attach": ["src/attach/**/.*", "src/attach/**/*.*"],
+        "svg": "src/icons/**/*.svg",
+        "fonts": "src/fonts/*.*"
+    },
+    "watch": {
+        "html": "src/pug/**/*.pug",
+        "js": "src/js/**/*.js",
+        "css": "src/sass/**/*.scss",
+        "img": "src/img/**/*.*",
+        "svg": "src/icons/*.svg",
+        "attach": ["src/attach/**/.*", "src/attach/**/*.*"],
+        "fonts": "src/fonts/**/*.*"
+    } 	
+}

@@ -1,0 +1,1 @@
+export var requireAll = r => r.keys().forEach(r);
