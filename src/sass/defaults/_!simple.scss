@@ -35,9 +35,9 @@ html, body{
 	
 	font-size: 62.5%; // 1rem = 10px 
 
-	@include max-screen($large_desktop) {
-		font-size: 58%;
-	}
+	// @include max-screen($large_desktop) {
+	// 	font-size: 58%;
+	// }
 
 }
 body{
@@ -47,10 +47,16 @@ body{
 		overflow-x: hidden;
 		overflow-y: scroll;
 	}
+
+	
 }
 
 input {
     -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+    color: inherit;
+    font-family: inherit;
 }
 
 main{
@@ -58,6 +64,7 @@ main{
 }
 
 a{
+	color: inherit;
 	text-decoration-skip-ink: none;
 	text-decoration: none;
 }
@@ -69,6 +76,10 @@ a{
 		display: inline-block;
 		vertical-align: middle;
 	}
+}
+
+.icon{
+	width: 100%;
 }
 
 .clear{
@@ -102,8 +113,19 @@ a{
 		justify-content: space-between;
 	}
 
+	&_left{
+		justify-content: flex-start;
+	}
+
+	&_right{
+		justify-content: flex-end;
+	}
+
 	&_start{
 		align-items: flex-start;
+	}
+	&_bottom{
+		align-items: flex-end;
 	}
 
 	&_vertical{
@@ -159,19 +181,20 @@ img, svg{
 }
 
 .css-scrollbar{
+	overflow-y: auto;
 	/* width */
 	&::-webkit-scrollbar {
-		width: 6px;
+		width: 3px;
 	}
 
 	/* Track */
 	&::-webkit-scrollbar-track {
-		background: #eaebef;
+		background: rgba(#C4C4C4, .4);
 	}
 
 	/* Handle */
 	&::-webkit-scrollbar-thumb {
-		background: #eff; 
+		background: $default; 
 	}
 
 	/* Handle on hover */

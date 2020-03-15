@@ -11,7 +11,7 @@
     "src": {
         "html": "src/pug/pages/**/*.pug",
         "js": "src/js/app.js",
-        "css": "src/sass/**/*.scss",
+        "css": "src/sass/app.scss",
         "img": "src/img/*.{jpg,png}",
         "attach": ["src/attach/**/.*", "src/attach/**/*.*"],
         "svg": "src/icons/**/*.svg",

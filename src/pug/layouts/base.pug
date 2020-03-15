@@ -58,8 +58,10 @@ html(class=html.classList)&attributes(html.attrs)
 				function canUseWebP(){var e=document.createElement("canvas");return!(!e.getContext||!e.getContext("2d"))&&0==e.toDataURL("image/webp").indexOf("data:image/webp")}var root=document.getElementsByTagName("html")[0];canUseWebP()?root.classList.add("ws"):root.classList.add("wn");
 		block head-end
 	body(class=body.classList)&attributes(body.attrs)
+		include tooltips
+		include menu-object
 		block header 
-			include header
+			+header
 		block content
 		block footer 
 			include footer

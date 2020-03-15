@@ -1,4 +1,5 @@
-import './vendors';
+import { App } from './init';
 
-import './modules/_form';
-import './modules/_modals';
+var app = new App();
+
+app.init();
