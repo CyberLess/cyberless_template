@@ -4,11 +4,11 @@
 cyberless_template
 ├── src
 │   ├── attach
-│	│	├── .htaccess
+│   │   ├── .htaccess
 │   │   └── robots.txt
 │   ├── img
 │   ├── js
-│	│	├── modules
+│   │   ├── modules
 │   │   │   ├── forms.js
 │   │   │   └── modals.js
 │   │   ├── app.js
@@ -16,7 +16,7 @@ cyberless_template
 │   │   └── init.js
 │   ├── pug
 │   │   ├── mixins
-│	│   │   ├── bemto-master
+│   │   │   ├── bemto-master
 │   │   │   ├── mixin-loader.pug
 │   │   │   └── svg.pug
 │   │   ├── layouts
@@ -43,7 +43,7 @@ cyberless_template
 │       │   └── _placeholder.scss
 │       ├── modules
 │       │   ├── _!btn.scss
-│		│	├── _footer.scss
+│       │   ├── _footer.scss
 │       │   └── _header.scss
 │       │   
 │       └── app.scss
