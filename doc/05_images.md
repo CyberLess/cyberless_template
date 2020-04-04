@@ -1,0 +1,42 @@
+# Работа с изображениями
+
+Изображения следует хранить в папке `src/img`.
+При запуске задачи `images` файлы из папки `src/img` копируются в `dist/app/img`.
+Пути к файлам изображений указываются как от src корня, пример - `/img/image.jpg`, а на выходе будут преобразовываться в формат `/app/img/image.jpg`.
+После добавления картинки в папку `src/img`, она сжимается, а так же дублируется в формат `.webp`, при условии что основная задача сборки - `gulp` запущена. Одновременно с этим автоматически заменяются пути в коде в зависимости от поддержки браузером. Если картинку указали в html, то вариант
+```text
+<img class="test" src="/img/image.jpg" alt="">
+```
+примет вид 
+```text
+<picture>
+	<source type="image/webp" srcset="/app/img/image.webp">
+	<img class="test" src="/app/img/image.jpg" alt="" />
+</picture>
+```
+В случае с css, это будет выглядеть так:
+```text
+.block{
+	background: url('/img/image.jpg') center no-repeat;
+}
+```
+преобразует в
+
+```text
+.ws .block{
+	background: url('/app/img/image.webp') center no-repeat;
+}
+.wn .block{
+	background: url('/app/img/image.jpg') center no-repeat;
+}
+```
+При загрузке, элементу html, посредством js добавляется класс "ws" или "wn" взависимости от поддержки.
+
+```text
+cyberless_template
+├── dist
+│   └── app
+│   	└── img
+└── src
+    └── img
+```
