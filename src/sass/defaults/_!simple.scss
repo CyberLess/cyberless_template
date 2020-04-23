@@ -1,11 +1,11 @@
-*{
+* {
 	padding: 0;
 	margin: 0;
 	outline: none;
 	box-sizing: border-box;
 }
 
-.wrap{
+.wrap {
 	padding: 0 32px;
 	max-width: 1400px;
 	z-index: 15;
@@ -25,162 +25,158 @@
 	// }
 }
 
-html{
-	&.js-lock{
+html {
+	&.js-lock {
 		overflow: hidden;
 	}
 }
 
-html, body{
-	
-	font-size: 62.5%; // 1rem = 10px 
+html,
+body {
+	font-size: 62.5%; // 1rem = 10px
 
 	// @include max-screen($large_desktop) {
 	// 	font-size: 58%;
 	// }
-
 }
-body{
-	position: relative;	
+body {
+	position: relative;
 
-	&.js-lock{
+	&.js-lock {
 		overflow-x: hidden;
 		overflow-y: scroll;
 	}
-
-	
 }
 
-input {
-    -webkit-appearance: none;
-    appearance: none;
-    -moz-appearance: none;
-    color: inherit;
-    font-family: inherit;
+input,
+textarea {
+	-webkit-appearance: none;
+	appearance: none;
+	-moz-appearance: none;
+	color: inherit;
+	font-family: inherit;
 }
 
-main{
+main {
 	display: block;
 }
 
-a{
+a {
 	color: inherit;
 	text-decoration-skip-ink: none;
 	text-decoration: none;
 }
 
-.inline{
+.inline {
 	font-size: 0;
 
-	&>*{
+	& > * {
 		display: inline-block;
 		vertical-align: middle;
 	}
 }
 
-.icon{
+.icon {
 	width: 100%;
 }
 
-.clear{
-	&:after{
-		content: '';
+.clear {
+	&:after {
+		content: "";
 		display: block;
 		clear: both;
 	}
-	&__left{
+	&__left {
 		float: left;
 	}
-	&__right{
+	&__right {
 		float: right;
 	}
 }
 
-
-.flex{
+.flex {
 	display: flex;
 	flex-wrap: wrap;
 
-	&_center{
+	&_center {
 		justify-content: center;
 	}
 
-	&_inline{
+	&_inline {
 		display: inline-flex;
 	}
 
-	&_justify{
+	&_justify {
 		justify-content: space-between;
 	}
 
-	&_left{
+	&_left {
 		justify-content: flex-start;
 	}
 
-	&_right{
+	&_right {
 		justify-content: flex-end;
 	}
 
-	&_start{
+	&_start {
 		align-items: flex-start;
 	}
-	&_bottom{
+	&_bottom {
 		align-items: flex-end;
 	}
 
-	&_vertical{
+	&_vertical {
 		align-items: center;
 	}
 }
 
-.css-text-left{
+.css-text-left {
 	text-align: left;
 }
 
-.css-text-center{
+.css-text-center {
 	text-align: center;
 }
 
-.css-text-right{
+.css-text-right {
 	text-align: right;
 }
 
-.row{
+.row {
 	display: table;
 	width: 100%;
 
-	&_fixed{
+	&_fixed {
 		table-layout: fixed;
 	}
 
-	&>*{
+	& > * {
 		display: table-cell;
 		vertical-align: top;
 	}
-
 }
 
-.fit-by-content{
+.fit-by-content {
 	white-space: nowrap;
 	width: 1%;
 }
 
-img, svg{
+img,
+svg {
 	vertical-align: top;
 	max-width: 100%;
 }
 
-.object-fit{
+.object-fit {
 	position: absolute;
 	left: 0;
 	top: 0;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-
 }
 
-.css-scrollbar{
+.css-scrollbar {
 	overflow-y: auto;
 	/* width */
 	&::-webkit-scrollbar {
@@ -189,16 +185,16 @@ img, svg{
 
 	/* Track */
 	&::-webkit-scrollbar-track {
-		background: rgba(#C4C4C4, .4);
+		background: rgba(#c4c4c4, 0.4);
 	}
 
 	/* Handle */
 	&::-webkit-scrollbar-thumb {
-		background: $default; 
+		background: gray;
 	}
 
 	/* Handle on hover */
 	// &::-webkit-scrollbar-thumb:hover {
-	// 	background: #555; 
-	// }	
+	// 	background: #555;
+	// }
 }

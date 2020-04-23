@@ -7,6 +7,6 @@ $small_tablet: 768px;
 $large_mobile: 580px;
 $small_mobile: 440px;
 
-// &::max-screen($large_desktop) {
+// @include max-screen($large_desktop) {
 
 // }
