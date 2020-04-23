@@ -22,11 +22,43 @@ html(lang="ru")
 				padding: 20px 40px;
 				background-color: #000;		
 			}
+			.head-top{
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				margin-top: 24px;
+				margin-bottom: 40px;
+				justify-content: space-between;
+
+			}
+
+			.head-title{
+				
+				
+				font-size: 24px;
+				line-height: 1.4em;
+			    		
+			}
+
+			.git-link{
+				font-size: 12px;
+				line-height: 1.2em;
+				display: block;
+				margin: 5px 0;
+				transition: ease .2s;
+				color: rgba(255,255,255, .2)!important;
+			}
+
+			.git-link:hover{
+				color:  #96fd8b!important;
+			}
 
 			a{
 				color: #fff;
 				position: relative;
 				display: inline-block;
+				text-decoration: none;
+				
 
 
 			}
@@ -67,13 +99,17 @@ html(lang="ru")
 			li{
 				font-size: 16px;
 				margin-bottom: 8px;
+				position: relative;
+				padding-left: 30px;
 				list-style: none;
 				page-break-inside: avoid;		
 				counter-increment: heading;	
 			}
 
 			li::before{
-				
+				position: absolute;
+				left: 0;
+				top: 0;
 				content: counter(heading) ".";
 				font-size: 14px;
 			    color: rgba(241,241,241,.5);
@@ -83,13 +119,6 @@ html(lang="ru")
 				text-align: right;
 			}
 
-			h3{
-				margin-top: 24px;
-				margin-bottom: 40px;
-				font-size: 24px;
-				line-height: 1.4em;
-			    		
-			}
 
 			a:hover{
 				text-decoration: none;
@@ -118,12 +147,23 @@ html(lang="ru")
 					-moz-column-count: 1;
 					-column-count: 1;
 				}
+
+				.head-title{
+					order: 2;
+				}
+				.git-link{
+					order: 1;
+					margin-bottom: 15px;
+					font-size: 10px;
+				}
 			}
 	body
 		.wrap
 			.box
-				h3 
-					| Страницы проекта 
-					nobr «#project»:
+				.head-top
+					h3.head-title 
+						| Страницы проекта 
+						nobr «#project»:
+					a.git-link(href="https://github.com/CyberLess/cyberless_template" target="_blank") cyberless_template
 				#update-this
 		
