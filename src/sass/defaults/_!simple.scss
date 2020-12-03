@@ -26,21 +26,15 @@
 }
 
 html {
+	font-size: 62.5%;
 	&.js-lock {
 		overflow: hidden;
 	}
 }
 
-html,
-body {
-	font-size: 62.5%; // 1rem = 10px
-
-	// @include max-screen($large_desktop) {
-	// 	font-size: 58%;
-	// }
-}
 body {
 	position: relative;
+	font-size: 1.6rem;
 
 	&.js-lock {
 		overflow-x: hidden;
@@ -49,7 +43,8 @@ body {
 }
 
 input,
-textarea {
+textarea,
+button {
 	-webkit-appearance: none;
 	appearance: none;
 	-moz-appearance: none;
@@ -140,25 +135,6 @@ a {
 
 .css-text-right {
 	text-align: right;
-}
-
-.row {
-	display: table;
-	width: 100%;
-
-	&_fixed {
-		table-layout: fixed;
-	}
-
-	& > * {
-		display: table-cell;
-		vertical-align: top;
-	}
-}
-
-.fit-by-content {
-	white-space: nowrap;
-	width: 1%;
 }
 
 img,

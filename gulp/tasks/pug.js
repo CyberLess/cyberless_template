@@ -13,7 +13,13 @@ module.exports = (gulp, plugins, browserSync) => {
 			// -------------------------------------------- Start Task
 			gulp
 				.src(path.src.html)
-				.pipe(plugins.changed("dist", { extension: ".html" }))
+				// .pipe(plugins.changed("dist", { extension: ".html" }))
+				.pipe(
+					plugins.newer({
+						dest: "./dist/",
+						extra: "./src/pug/{layouts,mixin}/*.pug",
+					})
+				)
 				.pipe(plugins.plumber({ errorHandler }))
 				.pipe(
 					plugins.pug({
@@ -109,7 +115,8 @@ module.exports = (gulp, plugins, browserSync) => {
 				.pipe(
 					plugins.htmlPrettify({ indent_char: " ", indent_size: 4 })
 				)
-				.pipe(gulp.dest(path.build.html));
+				.pipe(gulp.dest(path.build.html))
+				.on("end", browserSync.reload);
 		// ---------------------------------------------- End Task
 		return stream;
 	};
